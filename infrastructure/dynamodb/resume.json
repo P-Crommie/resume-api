@@ -1,475 +1,472 @@
 {
-  "id": {
-      "S": "1"
-  },
-  "basics": {
-      "M": {
-          "name": {
-              "S": "Emmanuel Kweku Nyame Cromwell"
-          },
-          "label": {
-              "S": "DevOps Engineer"
-          },
-          "image": {
-              "S": ""
-          },
-          "email": {
-              "S": "emmanuelcromwell@ymail.com"
-          },
-          "phone": {
-              "S": "+233543316062"
-          },
-          "url": {
-              "S": ""
-          },
-          "summary": {
-              "S": "DevOps Engineer with hands-on managing end-to-end software development life cycle. Skilled in designing, building, and scaling infrastructure in the cloud. Strong communicator, collaborator, and troubleshooter, ensuring seamless delivery of software projects."
-          },
-          "location": {
-              "M": {
-                  "address": {
-                      "S": "GA-349-7228 Naa Ayorkor Street, Nii Boi Town, Lapaz"
-                  },
-                  "postalCode": {
-                      "S": ""
-                  },
-                  "city": {
-                      "S": "Accra"
-                  },
-                  "countryCode": {
-                      "S": "GH"
-                  },
-                  "region": {
-                      "S": "Greater Accra"
-                  }
-              }
-          },
-          "profiles": {
-              "L": [
-                  {
-                      "M": {
-                          "network": {
-                              "S": "LinkedIn"
-                          },
-                          "username": {
-                              "S": "emmanuel-cromwell-devops"
-                          },
-                          "url": {
-                              "S": "https://linkedin.com/in/emmanuel-cromwell-devops"
-                          }
-                      }
-                  },
-                  {
-                      "M": {
-                          "network": {
-                              "S": "GitHub"
-                          },
-                          "username": {
-                              "S": "P-Crommie"
-                          },
-                          "url": {
-                              "S": "https://github.com/P-Crommie"
-                          }
-                      }
-                  }
-              ]
-          }
-      }
-  },
-  "work": {
-      "L": [
-          {
-              "M": {
-                  "name": {
-                      "S": "Hubtel"
-                  },
-                  "position": {
-                      "S": "Cloud Operations Engineer"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "startDate": {
-                      "S": "2024-02-01"
-                  },
-                  "endDate": {
-                      "S": "Present"
-                  },
-                  "summary": {
-                      "S": "Implementing and managing new infrastructure services, and modifying and enhancing existing infrastructure to meet evolving requirements. Utilising automation tools like Terraform and Ansible to streamline infrastructure management tasks, transition existing infrastructure to Infrastructure as Code (IAC), and develop templates for efficient resource management and deployment. Continuously monitor infrastructure health, analyzing metrics and trends to ensure stability and scalability. Anticipate and prevent potential problems, swiftly addressing issues to minimize disruptions and ensure uninterrupted operations. Maintaining comprehensive documentation of processes and procedures to ensure clarity and consistency in operations."
-                  },
-                  "highlights": {
-                      "L": []
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Really Great Tech (RGT)"
-                  },
-                  "position": {
-                      "S": "DevOps Engineer"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "startDate": {
-                      "S": "2023-04-01"
-                  },
-                  "endDate": {
-                      "S": "2024-02-01"
-                  },
-                  "summary": {
-                      "S": "Managed servers, clusters, and cloud infrastructure, achieving a 20% increase in system uptime and streamlined deployment processes. Designed and implemented CI/CD pipelines using GitHub Actions, and Jenkins, hosted custom build agents, accelerating application delivery by 30% and reinforcing continuous delivery practices. Managed the seamless addition and removal of services using Terraform, enhancing scalability and maintainability. Acted as a mentor in a DevOps boot camp training program, fostering continuous learning and teamwork, enhancing team efficiency and product quality through shared knowledge and best practices."
-                  },
-                  "highlights": {
-                      "L": []
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Nethermind"
-                  },
-                  "position": {
-                      "S": "DevOps Engineer Intern"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "startDate": {
-                      "S": "2023-10-01"
-                  },
-                  "endDate": {
-                      "S": "2024-02-01"
-                  },
-                  "summary": {
-                      "S": "Developed and managed automated deployment systems using containerization and orchestration on AWS ECS, enhancing deployment efficiency and minimizing downtime. Utilized Terraform for Infrastructure as Code (IAC) to provision scalable infrastructure for both testing and production environments. Implemented CI/CD pipelines with GitHub Actions, automating software delivery and ensuring rapid, reliable deployments. Authored comprehensive documentation on deployment procedures and best practices to facilitate knowledge sharing and standardization."
-                  },
-                  "highlights": {
-                      "L": []
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Ministry of Energy"
-                  },
-                  "position": {
-                      "S": "System Administrator"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "startDate": {
-                      "S": "2018-09-01"
-                  },
-                  "endDate": {
-                      "S": "2021-12-01"
-                  },
-                  "summary": {
-                      "S": "Ensured continuous operation of the server room, wireless network, and server infrastructure, resulting in uninterrupted system performance. Orchestrated system-wide operating system and software deployments, effectively resolving associated upgrade challenges and reducing downtime by 25%. Responded to end-user support requests promptly, offering patient guidance through basic troubleshooting tasks and achieving a 90% issue resolution rate."
-                  },
-                  "highlights": {
-                      "L": []
-                  }
-              }
-          }
-      ]
-  },
-  "volunteer": {
-      "L": []
-  },
-  "education": {
-      "L": [
-          {
-              "M": {
-                  "institution": {
-                      "S": "Kwame Nkrumah University of Science and Technology"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "area": {
-                      "S": "Cyber Security and Digital Forensics"
-                  },
-                  "studyType": {
-                      "S": "M. Sc."
-                  },
-                  "startDate": {
-                      "S": "2022"
-                  },
-                  "endDate": {
-                      "S": "2024"
-                  },
-                  "score": {
-                      "S": ""
-                  },
-                  "courses": {
-                      "L": []
-                  }
-              }
-          },
-          {
-              "M": {
-                  "institution": {
-                      "S": "Develeap"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "area": {
-                      "S": "DevOps Engineering"
-                  },
-                  "studyType": {
-                      "S": ""
-                  },
-                  "startDate": {
-                      "S": "2022-10-01"
-                  },
-                  "endDate": {
-                      "S": "2023-02-01"
-                  },
-                  "score": {
-                      "S": ""
-                  },
-                  "courses": {
-                      "L": []
-                  }
-              }
-          },
-          {
-              "M": {
-                  "institution": {
-                      "S": "University of Cape Coast"
-                  },
-                  "url": {
-                      "S": ""
-                  },
-                  "area": {
-                      "S": "Computer Science"
-                  },
-                  "studyType": {
-                      "S": "B. Sc."
-                  },
-                  "startDate": {
-                      "S": "2013-09-01"
-                  },
-                  "endDate": {
-                      "S": "2017-06-01"
-                  },
-                  "score": {
-                      "S": ""
-                  },
-                  "courses": {
-                      "L": []
-                  }
-              }
-          }
-      ]
-  },
-  "awards": {
-      "L": []
-  },
-  "certificates": {
-      "L": [
-          {
-              "M": {
-                  "name": {
-                      "S": "CKA: Certified Kubernetes Administrator"
-                  },
-                  "date": {
-                      "S": "2024-05-01"
-                  },
-                  "issuer": {
-                      "S": "Linux Foundation"
-                  },
-                  "url": {
-                      "S": "https://www.credly.com/badges/861e330c-c2ad-4c9f-91a8-baeffa85c800/public_url"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "AWS Certified Solutions Architect"
-                  },
-                  "date": {
-                      "S": "2023-03-14"
-                  },
-                  "issuer": {
-                      "S": "Amazon Web Services"
-                  },
-                  "url": {
-                      "S": "https://www.credly.com/badges/f29d6a84-efbb-4a22-b21f-ad0e65085007"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Google IT Support"
-                  },
-                  "date": {
-                      "S": "2022-07-01"
-                  },
-                  "issuer": {
-                      "S": "Coursera"
-                  },
-                  "url": {
-                      "S": "https://www.coursera.org/account/accomplishments/professional-cert/9E8N5QLBXJKN"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Google IT Automation with Python"
-                  },
-                  "date": {
-                      "S": "2022-08-29"
-                  },
-                  "issuer": {
-                      "S": "Coursera"
-                  },
-                  "url": {
-                      "S": "https://coursera.org/verify/professional-cert/J7VSVTGNEN46"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "DevOps on AWS"
-                  },
-                  "date": {
-                      "S": "2022-10-06"
-                  },
-                  "issuer": {
-                      "S": "Coursera"
-                  },
-                  "url": {
-                      "S": "https://www.coursera.org/account/accomplishments/specialization/certificate/VS45QR2KDWR8"
-                  }
-              }
-          }
-      ]
-  },
-  "publications": {
-      "L": []
-  },
-  "skills": {
-      "L": [
-          {
-              "M": {
-                  "name": {
-                      "S": "Technical Skills"
-                  },
-                  "level": {
-                      "S": ""
-                  },
-                  "keywords": {
-                      "L": [
-                          {
-                              "S": "Cloud Computing"
-                          },
-                          {
-                              "S": "DevOps Principles"
-                          },
-                          {
-                              "S": "IT Troubleshooting & Problem Solving"
-                          },
-                          {
-                              "S": "Onsite & Remote Technical Support"
-                          },
-                          {
-                              "S": "Containerization"
-                          },
-                          {
-                              "S": "Configuration Management"
-                          },
-                          {
-                              "S": "IT Security"
-                          },
-                          {
-                              "S": "GitOps"
-                          }
-                      ]
-                  }
-              }
-          },
-          {
-              "M": {
-                  "name": {
-                      "S": "Soft Skills"
-                  },
-                  "level": {
-                      "S": ""
-                  },
-                  "keywords": {
-                      "L": [
-                          {
-                              "S": "Collaboration"
-                          },
-                          {
-                              "S": "Communication"
-                          },
-                          {
-                              "S": "Problem-solving and analytical skills"
-                          },
-                          {
-                              "S": "Continuous improvement"
-                          }
-                      ]
-                  }
-              }
-          }
-      ]
-  },
-  "languages": {
-      "L": [
-          {
-              "M": {
-                  "language": {
-                      "S": "English"
-                  },
-                  "fluency": {
-                      "S": "Native speaker"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "language": {
-                      "S": "Twi"
-                  },
-                  "fluency": {
-                      "S": "Native speakerNative speaker"
-                  }
-              }
-          },
-          {
-              "M": {
-                  "language": {
-                      "S": "Fante"
-                  },
-                  "fluency": {
-                      "S": "Native speaker"
-                  }
-              }
-          }
-      ]
-  },
-  "interests": {
-      "L": []
-  },
-  "references": {
-      "L": []
-  },
-  "projects": {
-      "L": []
-  }
+    "basics": {
+        "M": {
+            "name": {
+                "S": "Emmanuel Kweku Nyame Cromwell"
+            },
+            "label": {
+                "S": "DevOps Engineer"
+            },
+            "image": {
+                "S": ""
+            },
+            "email": {
+                "S": "emmanuelcromwell@ymail.com"
+            },
+            "phone": {
+                "S": "+233543316062"
+            },
+            "url": {
+                "S": ""
+            },
+            "summary": {
+                "S": "DevOps Engineer with hands-on managing end-to-end software development life cycle. Skilled in designing, building, and scaling infrastructure in the cloud. Strong communicator, collaborator, and troubleshooter, ensuring seamless delivery of software projects."
+            },
+            "location": {
+                "M": {
+                    "address": {
+                        "S": "GA-349-7228 Naa Ayorkor Street, Nii Boi Town, Lapaz"
+                    },
+                    "postalCode": {
+                        "S": ""
+                    },
+                    "city": {
+                        "S": "Accra"
+                    },
+                    "countryCode": {
+                        "S": "GH"
+                    },
+                    "region": {
+                        "S": "Greater Accra"
+                    }
+                }
+            },
+            "profiles": {
+                "L": [
+                    {
+                        "M": {
+                            "network": {
+                                "S": "LinkedIn"
+                            },
+                            "username": {
+                                "S": "emmanuel-cromwell-devops"
+                            },
+                            "url": {
+                                "S": "https://linkedin.com/in/emmanuel-cromwell-devops"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "network": {
+                                "S": "GitHub"
+                            },
+                            "username": {
+                                "S": "P-Crommie"
+                            },
+                            "url": {
+                                "S": "https://github.com/P-Crommie"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "work": {
+        "L": [
+            {
+                "M": {
+                    "name": {
+                        "S": "Hubtel"
+                    },
+                    "position": {
+                        "S": "Cloud Operations Engineer"
+                    },
+                    "url": {
+                        "S": "https://hubtel.com/"
+                    },
+                    "startDate": {
+                        "S": "2024-02-01"
+                    },
+                    "endDate": {
+                        "S": "Present"
+                    },
+                    "summary": {
+                        "S": "Implementing and managing new infrastructure services, and modifying and enhancing existing infrastructure to meet evolving requirements. Utilising automation tools like Terraform and Ansible to streamline infrastructure management tasks, transition existing infrastructure to Infrastructure as Code (IAC), and develop templates for efficient resource management and deployment. Continuously monitor infrastructure health, analyzing metrics and trends to ensure stability and scalability. Anticipate and prevent potential problems, swiftly addressing issues to minimize disruptions and ensure uninterrupted operations. Maintaining comprehensive documentation of processes and procedures to ensure clarity and consistency in operations."
+                    },
+                    "highlights": {
+                        "L": []
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Really Great Tech (RGT)"
+                    },
+                    "position": {
+                        "S": "DevOps Engineer"
+                    },
+                    "url": {
+                        "S": "https://www.reallygreattech.com/"
+                    },
+                    "startDate": {
+                        "S": "2023-04-01"
+                    },
+                    "endDate": {
+                        "S": "2024-02-01"
+                    },
+                    "summary": {
+                        "S": "Managed servers, clusters, and cloud infrastructure, achieving a 20% increase in system uptime and streamlined deployment processes. Designed and implemented CI/CD pipelines using GitHub Actions, and Jenkins, hosted custom build agents, accelerating application delivery by 30% and reinforcing continuous delivery practices. Managed the seamless addition and removal of services using Terraform, enhancing scalability and maintainability. Acted as a mentor in a DevOps boot camp training program, fostering continuous learning and teamwork, enhancing team efficiency and product quality through shared knowledge and best practices."
+                    },
+                    "highlights": {
+                        "L": []
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Nethermind"
+                    },
+                    "position": {
+                        "S": "DevOps Engineer Intern"
+                    },
+                    "url": {
+                        "S": "https://www.nethermind.io/"
+                    },
+                    "startDate": {
+                        "S": "2023-10-01"
+                    },
+                    "endDate": {
+                        "S": "2024-02-01"
+                    },
+                    "summary": {
+                        "S": "Developed and managed automated deployment systems using containerization and orchestration on AWS ECS, enhancing deployment efficiency and minimizing downtime. Utilized Terraform for Infrastructure as Code (IAC) to provision scalable infrastructure for both testing and production environments. Implemented CI/CD pipelines with GitHub Actions, automating software delivery and ensuring rapid, reliable deployments. Authored comprehensive documentation on deployment procedures and best practices to facilitate knowledge sharing and standardization."
+                    },
+                    "highlights": {
+                        "L": []
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Ministry of Energy"
+                    },
+                    "position": {
+                        "S": "System Administrator"
+                    },
+                    "url": {
+                        "S": "https://www.energymin.gov.gh/"
+                    },
+                    "startDate": {
+                        "S": "2018-09-01"
+                    },
+                    "endDate": {
+                        "S": "2021-12-01"
+                    },
+                    "summary": {
+                        "S": "Ensured continuous operation of the server room, wireless network, and server infrastructure, resulting in uninterrupted system performance. Orchestrated system-wide operating system and software deployments, effectively resolving associated upgrade challenges and reducing downtime by 25%. Responded to end-user support requests promptly, offering patient guidance through basic troubleshooting tasks and achieving a 90% issue resolution rate."
+                    },
+                    "highlights": {
+                        "L": []
+                    }
+                }
+            }
+        ]
+    },
+    "volunteer": {
+        "L": []
+    },
+    "education": {
+        "L": [
+            {
+                "M": {
+                    "institution": {
+                        "S": "Kwame Nkrumah University of Science and Technology"
+                    },
+                    "url": {
+                        "S": ""
+                    },
+                    "area": {
+                        "S": "Cyber Security and Digital Forensics"
+                    },
+                    "studyType": {
+                        "S": "M. Sc."
+                    },
+                    "startDate": {
+                        "S": "2022"
+                    },
+                    "endDate": {
+                        "S": "2024"
+                    },
+                    "score": {
+                        "S": ""
+                    },
+                    "courses": {
+                        "L": []
+                    }
+                }
+            },
+            {
+                "M": {
+                    "institution": {
+                        "S": "Develeap"
+                    },
+                    "url": {
+                        "S": ""
+                    },
+                    "area": {
+                        "S": "DevOps Engineering"
+                    },
+                    "studyType": {
+                        "S": ""
+                    },
+                    "startDate": {
+                        "S": "2022-10-01"
+                    },
+                    "endDate": {
+                        "S": "2023-02-01"
+                    },
+                    "score": {
+                        "S": ""
+                    },
+                    "courses": {
+                        "L": []
+                    }
+                }
+            },
+            {
+                "M": {
+                    "institution": {
+                        "S": "University of Cape Coast"
+                    },
+                    "url": {
+                        "S": ""
+                    },
+                    "area": {
+                        "S": "Computer Science"
+                    },
+                    "studyType": {
+                        "S": "B. Sc."
+                    },
+                    "startDate": {
+                        "S": "2013-09-01"
+                    },
+                    "endDate": {
+                        "S": "2017-06-01"
+                    },
+                    "score": {
+                        "S": ""
+                    },
+                    "courses": {
+                        "L": []
+                    }
+                }
+            }
+        ]
+    },
+    "awards": {
+        "L": []
+    },
+    "certificates": {
+        "L": [
+            {
+                "M": {
+                    "name": {
+                        "S": "CKA: Certified Kubernetes Administrator"
+                    },
+                    "date": {
+                        "S": "2024-05-01"
+                    },
+                    "issuer": {
+                        "S": "Linux Foundation"
+                    },
+                    "url": {
+                        "S": "https://www.credly.com/badges/861e330c-c2ad-4c9f-91a8-baeffa85c800/public_url"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "AWS Certified Solutions Architect"
+                    },
+                    "date": {
+                        "S": "2023-03-14"
+                    },
+                    "issuer": {
+                        "S": "Amazon Web Services"
+                    },
+                    "url": {
+                        "S": "https://www.credly.com/badges/f29d6a84-efbb-4a22-b21f-ad0e65085007"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Google IT Support"
+                    },
+                    "date": {
+                        "S": "2022-07-01"
+                    },
+                    "issuer": {
+                        "S": "Coursera"
+                    },
+                    "url": {
+                        "S": "https://www.coursera.org/account/accomplishments/professional-cert/9E8N5QLBXJKN"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Google IT Automation with Python"
+                    },
+                    "date": {
+                        "S": "2022-08-29"
+                    },
+                    "issuer": {
+                        "S": "Coursera"
+                    },
+                    "url": {
+                        "S": "https://coursera.org/verify/professional-cert/J7VSVTGNEN46"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "DevOps on AWS"
+                    },
+                    "date": {
+                        "S": "2022-10-06"
+                    },
+                    "issuer": {
+                        "S": "Coursera"
+                    },
+                    "url": {
+                        "S": "https://www.coursera.org/account/accomplishments/specialization/certificate/VS45QR2KDWR8"
+                    }
+                }
+            }
+        ]
+    },
+    "publications": {
+        "L": []
+    },
+    "skills": {
+        "L": [
+            {
+                "M": {
+                    "name": {
+                        "S": "Technical Skills"
+                    },
+                    "level": {
+                        "S": ""
+                    },
+                    "keywords": {
+                        "L": [
+                            {
+                                "S": "Cloud Computing"
+                            },
+                            {
+                                "S": "DevOps Principles"
+                            },
+                            {
+                                "S": "IT Troubleshooting & Problem Solving"
+                            },
+                            {
+                                "S": "Onsite & Remote Technical Support"
+                            },
+                            {
+                                "S": "Containerization"
+                            },
+                            {
+                                "S": "Configuration Management"
+                            },
+                            {
+                                "S": "IT Security"
+                            },
+                            {
+                                "S": "GitOps"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "M": {
+                    "name": {
+                        "S": "Soft Skills"
+                    },
+                    "level": {
+                        "S": ""
+                    },
+                    "keywords": {
+                        "L": [
+                            {
+                                "S": "Collaboration"
+                            },
+                            {
+                                "S": "Communication"
+                            },
+                            {
+                                "S": "Problem-solving and analytical skills"
+                            },
+                            {
+                                "S": "Continuous improvement"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "languages": {
+        "L": [
+            {
+                "M": {
+                    "language": {
+                        "S": "English"
+                    },
+                    "fluency": {
+                        "S": "Native speaker"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "language": {
+                        "S": "Twi"
+                    },
+                    "fluency": {
+                        "S": "Native speakerNative speaker"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "language": {
+                        "S": "Fante"
+                    },
+                    "fluency": {
+                        "S": "Native speaker"
+                    }
+                }
+            }
+        ]
+    },
+    "interests": {
+        "L": []
+    },
+    "references": {
+        "L": []
+    },
+    "projects": {
+        "L": []
+    }
 }

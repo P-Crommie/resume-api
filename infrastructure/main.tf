@@ -15,3 +15,12 @@ module "lambdaFunction" {
   dynamodbTableArn  = module.dynamodbTable.dynamodbTableArn
   dynamodbTableName = module.dynamodbTable.dynamodbTableName
 }
+
+module "apiGateway" {
+  source                 = "./api-gateway"
+  project                = var.project
+  environment            = var.environment
+  tags                   = var.tags
+  lambdaFunctionName     = module.lambdaFunction.lambdaFunctionName
+  lambaFunctionInvokeArn = module.lambdaFunction.lambaFunctionInvokeArn
+}
