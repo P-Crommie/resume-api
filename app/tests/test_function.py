@@ -10,7 +10,7 @@ def mock_environment():
     with patch.dict(os.environ, {
         'TABLE_NAME': 'test-table',
         'RESUME_ID': '1',
-        'AWS_DEFAULT_REGION': 'us-west-2'  # Set your desired AWS region
+        'AWS_DEFAULT_REGION': 'eu-west-1'  # Set your desired AWS region
     }):
         yield
 
@@ -29,7 +29,7 @@ def test_lambda_handler_success(mock_boto3_resource, mock_environment):
     context = {}
 
     # Call the lambda_handler function
-    response = lambda_handler.lambda_handler(event, context)
+    response = lambda_handler(event, context)
 
     # Validate the response
     assert response['statusCode'] == 200
@@ -48,7 +48,7 @@ def test_lambda_handler_resume_not_found(mock_boto3_resource, mock_environment):
     context = {}
 
     # Call the lambda_handler function
-    response = lambda_handler.lambda_handler(event, context)
+    response = lambda_handler(event, context)
 
     # Validate the response
     assert response['statusCode'] == 404
@@ -67,7 +67,7 @@ def test_lambda_handler_internal_server_error(mock_boto3_resource, mock_environm
     context = {}
 
     # Call the lambda_handler function
-    response = lambda_handler.lambda_handler(event, context)
+    response = lambda_handler(event, context)
 
     # Validate the response
     assert response['statusCode'] == 500
