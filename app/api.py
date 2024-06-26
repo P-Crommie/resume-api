@@ -1,71 +1,78 @@
-import json
 import os
-import logging
-import boto3
-from botocore.exceptions import ClientError
-
-# Initialize logging
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-
-# Set default AWS region if not set
-region = os.getenv('AWS_DEFAULT_REGION', 'eu-west-1') #add default region
-
-# Initialize DynamoDB resource outside the handler to reuse it
-dynamodb = boto3.resource('dynamodb', region_name=region)
-
-# Fetch table name and resume ID from environment variables
-table_name = os.getenv('TABLE_NAME')
-resume_id = os.getenv('RESUME_ID', '1')
-
-if not table_name:
-    logger.error("TABLE_NAME environment variable is not set.")
-    raise ValueError("TABLE_NAME environment variable is required")
-
-table = dynamodb.Table(table_name)
+import pytest
+from unittest.mock import patch, MagicMock
+import json
+from api import lambda_handler
 
 
-def lambda_handler(event, context):
-    logger.info(f"Get resume request with event data: {json.dumps(event)}")
+@pytest.fixture
+def mock_environment():
+    with patch.dict(os.environ, {
+        'TABLE_NAME': 'test-table',
+        'RESUME_ID': '1',
+        'AWS_DEFAULT_REGION': 'eu-west-1'  # Set your desired AWS region
+    }):
+        yield
 
-    try:
-        # Fetch the item from DynamoDB
-        response = table.get_item(Key={'id': resume_id})
 
-        if 'Item' in response:
-            logger.info(f"Resume found for id: {resume_id}")
-            return {
-                'statusCode': 200,
-                'body': json.dumps(response['Item'], indent=2),
-                'headers': {
-                    'Content-Type': 'application/json'
-                }
-            }
-        else:
-            logger.warning(f"No resume found for id: {resume_id}")
-            return {
-                'statusCode': 404,
-                'body': json.dumps({'error': 'Resume not found'}, indent=2),
-                'headers': {
-                    'Content-Type': 'application/json'
-                }
-            }
-    except ClientError as e:
-        error_message = e.response['Error']['Message']
-        logger.error(f"DynamoDB ClientError: {error_message}")
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'error': 'Internal server error', 'message': error_message}, indent=2),
-            'headers': {
-                'Content-Type': 'application/json'
-            }
-        }
-    except Exception as e:
-        logger.error(f"Exception: {str(e)}")
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'error': 'Internal server error', 'message': str(e)}, indent=2),
-            'headers': {
-                'Content-Type': 'application/json'
-            }
-        }
+@pytest.fixture
+def mock_dynamodb_resource():
+    with patch('boto3.resource') as mock_boto3_resource:
+        yield mock_boto3_resource
+
+
+def test_lambda_handler_success(mock_environment, mock_dynamodb_resource):
+    # Mock DynamoDB Table and its get_item method
+    mock_table = MagicMock()
+    mock_table.get_item.return_value = {
+        'Item': {'id': '1', 'name': 'Test Resume'}
+    }
+    mock_dynamodb_resource.return_value.Table.return_value = mock_table
+
+    # Mock event and context
+    event = {}
+    context = {}
+
+    # Call the lambda_handler function
+    response = lambda_handler(event, context)
+
+    # Validate the response
+    assert response['statusCode'] == 200
+    assert json.loads(response['body']) == {'id': '1', 'name': 'Test Resume'}
+
+
+def test_lambda_handler_resume_not_found(mock_environment, mock_dynamodb_resource):
+    # Mock DynamoDB Table and its get_item method to return no item
+    mock_table = MagicMock()
+    mock_table.get_item.return_value = {}
+    mock_dynamodb_resource.return_value.Table.return_value = mock_table
+
+    # Mock event and context
+    event = {}
+    context = {}
+
+    # Call the lambda_handler function
+    response = lambda_handler(event, context)
+
+    # Validate the response
+    assert response['statusCode'] == 404
+    assert json.loads(response['body']) == {'error': 'Resume not found'}
+
+
+def test_lambda_handler_internal_server_error(mock_environment, mock_dynamodb_resource):
+    # Mock DynamoDB Table to raise an exception
+    mock_table = MagicMock()
+    mock_table.get_item.side_effect = Exception("Test exception")
+    mock_dynamodb_resource.return_value.Table.return_value = mock_table
+
+    # Mock event and context
+    event = {}
+    context = {}
+
+    # Call the lambda_handler function
+    response = lambda_handler(event, context)
+
+    # Validate the response
+    assert response['statusCode'] == 500
+    assert 'error' in json.loads(response['body'])
+    assert 'message' in json.loads(response['body'])
