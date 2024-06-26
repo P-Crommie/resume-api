@@ -7,7 +7,11 @@ from api import lambda_handler
 
 @pytest.fixture
 def mock_environment():
-    with patch.dict(lambda_handler.os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'}):
+    with patch.dict(lambda_handler.os.environ, {
+        'TABLE_NAME': 'test-table',
+        'RESUME_ID': '1',
+        'AWS_DEFAULT_REGION': 'eu-west-1'
+    }):
         yield
 
 
