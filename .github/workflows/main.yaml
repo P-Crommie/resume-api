@@ -69,7 +69,6 @@ jobs:
       #       bash .github/scripts/test_client.sh
 
       - name: Build & Push Image to ECR
-        working-directory: ./app
         run: |
           bash .github/scripts/package.sh latest
 

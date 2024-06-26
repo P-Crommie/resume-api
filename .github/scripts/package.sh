@@ -18,7 +18,7 @@ fi
 
 # Build the Docker image
 echo "Building Docker image ${IMAGE_NAME}..."
-docker build -t "${IMAGE_NAME}" .
+docker build -t "${IMAGE_NAME}" -f app/Dockerfile .
 
 # Tag the Docker image
 echo "Tagging Docker image ${IMAGE_NAME}:latest to ${ECR_REPO}:${VERSION}..."
