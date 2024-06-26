@@ -10,22 +10,27 @@ logger.setLevel(logging.INFO)
 
 # Initialize DynamoDB resource outside the handler to reuse it
 dynamodb = boto3.resource('dynamodb')
-table_name = os.getenv('TABLE_NAME')
-table = dynamodb.Table(table_name)
 
-RESUME_ID = "1"
+# Fetch table name and resume ID from environment variables
+table_name = os.getenv('TABLE_NAME')
+resume_id = os.getenv('RESUME_ID', '1')
+
+if not table_name:
+    logger.error("TABLE_NAME environment variable is not set.")
+    raise ValueError("TABLE_NAME environment variable is required")
+
+table = dynamodb.Table(table_name)
 
 
 def lambda_handler(event, context):
+    logger.info(f"Get resume request with event data: {json.dumps(event)}")
+
     try:
         # Fetch the item from DynamoDB
-        response = table.get_item(Key={'id': RESUME_ID})
-
-        logger.info(f"Get resume request with event data: {
-                    event}")  # Log the event data
+        response = table.get_item(Key={'id': resume_id})
 
         if 'Item' in response:
-            logger.info(f"Resume found for id: {RESUME_ID}")
+            logger.info(f"Resume found for id: {resume_id}")
             return {
                 'statusCode': 200,
                 'body': json.dumps(response['Item'], indent=2),
@@ -34,7 +39,7 @@ def lambda_handler(event, context):
                 }
             }
         else:
-            logger.warning(f"No resume found for id: {RESUME_ID}")
+            logger.warning(f"No resume found for id: {resume_id}")
             return {
                 'statusCode': 404,
                 'body': json.dumps({'error': 'Resume not found'}, indent=2),
@@ -43,11 +48,11 @@ def lambda_handler(event, context):
                 }
             }
     except ClientError as e:
-        # Add specific exception handling here if needed
-        logger.error(f"ClientError: {str(e)}")
+        error_message = e.response['Error']['Message']
+        logger.error(f"DynamoDB ClientError: {error_message}")
         return {
             'statusCode': 500,
-            'body': json.dumps({'error': 'Internal server error'}, indent=2),
+            'body': json.dumps({'error': 'Internal server error', 'message': error_message}, indent=2),
             'headers': {
                 'Content-Type': 'application/json'
             }
@@ -56,7 +61,7 @@ def lambda_handler(event, context):
         logger.error(f"Exception: {str(e)}")
         return {
             'statusCode': 500,
-            'body': json.dumps({'error': 'Internal server error'}, indent=2),
+            'body': json.dumps({'error': 'Internal server error', 'message': str(e)}, indent=2),
             'headers': {
                 'Content-Type': 'application/json'
             }
