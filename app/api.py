@@ -8,11 +8,8 @@ from botocore.exceptions import ClientError
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# Set default AWS region if not set
-region = os.getenv('AWS_DEFAULT_REGION', 'eu-west-1')  # add default region
-
 # Initialize DynamoDB resource outside the handler to reuse it
-dynamodb = boto3.resource('dynamodb', region_name=region)
+dynamodb = boto3.resource('dynamodb')
 
 # Fetch table name and resume ID from environment variables
 table_name = os.getenv('TABLE_NAME')
