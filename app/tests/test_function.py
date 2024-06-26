@@ -1,12 +1,12 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import json
-import lambda_function
+from app.api import lambda_handler
 
 
 class TestLambdaHandler(unittest.TestCase):
 
-    @patch.dict(os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
+    @patch.dict(lambda_handler.os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
     @patch('boto3.resource')
     def test_lambda_handler_success(self, mock_dynamodb_resource):
         # Mock the DynamoDB Table and its get_item method
@@ -20,14 +20,14 @@ class TestLambdaHandler(unittest.TestCase):
         context = {}
 
         # Call the lambda_handler function
-        response = lambda_function.lambda_handler(event, context)
+        response = lambda_handler.lambda_handler(event, context)
 
         # Validate the response
         self.assertEqual(response['statusCode'], 200)
         self.assertEqual(json.loads(response['body']), {
                          'id': '1', 'name': 'Test Resume'})
 
-    @patch.dict(os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
+    @patch.dict(lambda_handler.os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
     @patch('boto3.resource')
     def test_lambda_handler_resume_not_found(self, mock_dynamodb_resource):
         # Mock the DynamoDB Table and its get_item method
@@ -40,14 +40,14 @@ class TestLambdaHandler(unittest.TestCase):
         context = {}
 
         # Call the lambda_handler function
-        response = lambda_function.lambda_handler(event, context)
+        response = lambda_handler.lambda_handler(event, context)
 
         # Validate the response
         self.assertEqual(response['statusCode'], 404)
         self.assertEqual(json.loads(response['body']), {
                          'error': 'Resume not found'})
 
-    @patch.dict(os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
+    @patch.dict(lambda_handler.os.environ, {'TABLE_NAME': 'test-table', 'RESUME_ID': '1'})
     @patch('boto3.resource')
     def test_lambda_handler_internal_server_error(self, mock_dynamodb_resource):
         # Mock the DynamoDB Table to raise an exception
@@ -60,7 +60,7 @@ class TestLambdaHandler(unittest.TestCase):
         context = {}
 
         # Call the lambda_handler function
-        response = lambda_function.lambda_handler(event, context)
+        response = lambda_handler.lambda_handler(event, context)
 
         # Validate the response
         self.assertEqual(response['statusCode'], 500)
