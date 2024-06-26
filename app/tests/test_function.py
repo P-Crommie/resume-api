@@ -7,10 +7,10 @@ from api import lambda_handler
 
 @pytest.fixture
 def mock_environment():
-    with patch.dict(lambda_handler.os.environ, {
+    with patch.dict(os.environ, {
         'TABLE_NAME': 'test-table',
         'RESUME_ID': '1',
-        'AWS_DEFAULT_REGION': 'eu-west-1'
+        'AWS_DEFAULT_REGION': 'us-west-2'  # Set your desired AWS region
     }):
         yield
 
