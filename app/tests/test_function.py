@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
 import json
-from app.api import lambda_handler  # Adjust import based on your file structure
+from api import lambda_handler
 
 
 @pytest.fixture
