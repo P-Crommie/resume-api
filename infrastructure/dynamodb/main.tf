@@ -16,7 +16,6 @@ resource "aws_dynamodb_table" "this" {
   )
 }
 
-
 resource "aws_dynamodb_table_item" "this" {
   table_name = aws_dynamodb_table.this.name
   hash_key   = "id"
