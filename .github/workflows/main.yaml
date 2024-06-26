@@ -35,7 +35,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-venv-
 
-      - name: Activate and Install Dependencies into Virtual env      
+      - name: Activate and Install Dependencies into Virtual env
+        working-directory: ./app
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -44,6 +45,7 @@ jobs:
         if: steps.cache-venv.outputs.cache-hit != 'true'
 
       - name: Run UnitTest
+        working-directory: ./app
         run: |
           . venv/bin/activate
           python -m unittest discover tests
