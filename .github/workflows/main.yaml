@@ -47,8 +47,7 @@ jobs:
       - name: Run UnitTest
         working-directory: ./app
         run: |
-          . venv/bin/activate
-          python -m unittest discover tests
+          source venv/bin/activate && pytest
 
     #   - name: Build dockerfile && Package
     #     run: |
