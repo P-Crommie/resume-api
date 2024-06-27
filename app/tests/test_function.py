@@ -92,13 +92,15 @@ def mock_environment():
 
 
 @patch('boto3.resource')
-def test_lambda_handler_success(mock_boto3_resource, mock_environment):
+@patch('boto3.client')
+def test_lambda_handler_success(mock_boto3_client, mock_boto3_resource, mock_environment):
     # Mock DynamoDB Table and its get_item method
     mock_table = MagicMock()
     mock_table.get_item.return_value = {
         'Item': {'id': '1', 'name': 'Test Resume'}
     }
     mock_boto3_resource.return_value.Table.return_value = mock_table
+    mock_boto3_client.return_value = MagicMock()
 
     # Mock event and context
     event = {}
@@ -113,11 +115,13 @@ def test_lambda_handler_success(mock_boto3_resource, mock_environment):
 
 
 @patch('boto3.resource')
-def test_lambda_handler_resume_not_found(mock_boto3_resource, mock_environment):
+@patch('boto3.client')
+def test_lambda_handler_resume_not_found(mock_boto3_client, mock_boto3_resource, mock_environment):
     # Mock DynamoDB Table and its get_item method to return no item
     mock_table = MagicMock()
     mock_table.get_item.return_value = {}
     mock_boto3_resource.return_value.Table.return_value = mock_table
+    mock_boto3_client.return_value = MagicMock()
 
     # Mock event and context
     event = {}
@@ -132,11 +136,13 @@ def test_lambda_handler_resume_not_found(mock_boto3_resource, mock_environment):
 
 
 @patch('boto3.resource')
-def test_lambda_handler_internal_server_error(mock_boto3_resource, mock_environment):
+@patch('boto3.client')
+def test_lambda_handler_internal_server_error(mock_boto3_client, mock_boto3_resource, mock_environment):
     # Mock DynamoDB Table to raise an exception
     mock_table = MagicMock()
     mock_table.get_item.side_effect = Exception("Test exception")
     mock_boto3_resource.return_value.Table.return_value = mock_table
+    mock_boto3_client.return_value = MagicMock()
 
     # Mock event and context
     event = {}
