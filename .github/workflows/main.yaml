@@ -63,12 +63,12 @@ jobs:
           pip install -r requirements.txt
         if: steps.cache-venv.outputs.cache-hit != 'true'
 
-      # - name: Run UnitTest
-      #   working-directory: ./app
-      #   run: |
-      #     source venv/bin/activate && pytest
-      #   env:
-      #     TABLE_NAME: test-table
+      - name: Run UnitTest
+        working-directory: ./app
+        run: |
+          source venv/bin/activate && pytest
+        env:
+          TABLE_NAME: test-table
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
