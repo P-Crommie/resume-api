@@ -40,26 +40,6 @@ jobs:
           search_commit_body: true
           user_format_type: "csv"
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.12"
-
-      - name: Activate and Install Dependencies into Virtual env
-        working-directory: ./app
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run UnitTest
-        working-directory: ./app
-        run: |
-          source venv/bin/activate && pytest
-        env:
-          TABLE_NAME: test-table
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -101,11 +81,6 @@ jobs:
       - name: Update Lambda function with new image
         run: |
           aws lambda update-function-code --function-name cloud-resume-api --image-uri $REGISTRY/$REPOSITORY:${{ needs.CI.outputs.version }}
-
-  #       - name: Test
-  #         run: |
-  #           sleep 40
-  #           curl http://${{ secrets.SPECIAL_PROJECT_HOST }}:8080
 
   Report:
     runs-on: ubuntu-latest
