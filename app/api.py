@@ -8,12 +8,13 @@ from botocore.exceptions import ClientError
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# Initialize DynamoDB resource outside the handler to reuse it
-dynamodb = boto3.resource('dynamodb')
-
 # Fetch table name and resume ID from environment variables
 table_name = os.getenv('TABLE_NAME')
 resume_id = os.getenv('RESUME_ID', '1')
+region = os.getenv('AWS_DEFAULT_REGION', "eu-west-1")
+
+# Initialize DynamoDB resource outside the handler to reuse it
+dynamodb = boto3.resource('dynamodb', region_name=region)
 
 if not table_name:
     logger.error("TABLE_NAME environment variable is not set.")
